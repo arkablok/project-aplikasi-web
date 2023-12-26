@@ -27,14 +27,12 @@ const Checkout = () => {
                 setCarts(Object.values(res.data.carts));
                 setTotal(res.data.cart_total);
             }
-            setLoading(false);
         });
 
         axios.get("/api/provinces").then((res) => {
             if (res.status === 200) {
                 setProvinces(Object.values(res.data.provinces));
             }
-            setLoading(false);
         });
         axios.get("/api/users").then((res) => {
             if (res.status === 200) {

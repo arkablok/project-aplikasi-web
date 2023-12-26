@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Province;
+use App\Models\Regency;
+use App\Models\District;
 use Illuminate\Http\Request;
+
 
 class OngkirController extends Controller
 {
@@ -94,4 +98,10 @@ class OngkirController extends Controller
 
 		\Cart::condition($condition);
 	}
+
+	public function getProvinces()
+    {
+        $provinces = Province::all(); // Mengambil semua data province dari tabel 'provinces'
+        return response()->json(['provinces' => $provinces], 200);
+    }
 }
